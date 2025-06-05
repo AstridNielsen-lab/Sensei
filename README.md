@@ -3,9 +3,9 @@
 ![Sensei Logo](https://img.shields.io/badge/Sensei-Learning%20Agents-blue)
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green)
+[![Download](https://img.shields.io/badge/Download-Google%20Drive-red)](https://drive.google.com/drive/folders/1WEME4h7v8HEz17trzOgLpTJJghberQOE?usp=sharing)
 
 🌐 **Website Oficial**: [https://sensei-jet.vercel.app/](https://sensei-jet.vercel.app/)
-🌐 **Fazer o download**: [https://drive.google.com/drive/folders/1WEME4h7v8HEz17trzOgLpTJJghberQOE?usp=sharing)
 
 ## 📖 Sobre o Projeto
 
