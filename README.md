@@ -142,9 +142,8 @@ Se você gostaria de apoiar o desenvolvimento do projeto:
 - **Solana (SOL)**: `9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM`
 
 #### 🏦 Métodos Tradicionais
-- **PayPal**: astrid.nielsen@example.com
-- **PIX (Brasil)**: astrid.nielsen@pix.com
-- **Wise**: astrid.nielsen@wise.com
+- **PayPal**: radiotatuapefm@gmail.com
+- **PIX (Brasil)**: radiotatuapefm@gmail.com
 
 ### Processo de Contribuição
 
