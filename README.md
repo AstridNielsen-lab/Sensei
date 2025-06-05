@@ -142,12 +142,17 @@ npm run electron
 
 Se você gostaria de apoiar o desenvolvimento do projeto:
 
-#### 💰 Criptomoedas
-- **Bitcoin (BTC)**: `1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa`
-- **Ethereum (ETH)**: `0x742d35Cc6635C0532925a3b8D9C9f01c4cB7f4e0`
-- **Binance Coin (BNB)**: `bnb1grpf0955h0ykzq3ar5nmum7y6gdfl6lxfn46h2`
-- **Cardano (ADA)**: `addr1qxy2ljnzj0qzc8as8j9k9y2h0zzqq5y5y5y5y5y5y5y5y5y5y`
-- **Solana (SOL)**: `9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM`
+---
+
+## 💰 **Como Contribuir**
+Qualquer valor doado ajuda a educar novos desenvolvedores em tecnologia!
+
+- **PIX/PayPal:** radiotatuapefm@gmail.com
+- **Bitcoin:** `bc1qmjf00jqttk2kgemxtxh0hv4xp8fqztnn23cuc2`
+- **Ethereum:** `0x7481B4591e7f0DFAD23b884E78C46F0c207a3E35`
+- **Litecoin:** `ltc1qxytts52mykr2u83x6ghwllmu7d524ltt702mcc`
+
+---
 
 #### 🏦 Métodos Tradicionais
 - **PayPal**: radiotatuapefm@gmail.com
