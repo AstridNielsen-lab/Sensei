@@ -5,6 +5,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 🌐 **Website Oficial**: [https://sensei-jet.vercel.app/](https://sensei-jet.vercel.app/)
+🌐 **Fazer o download**: [https://drive.google.com/drive/folders/1WEME4h7v8HEz17trzOgLpTJJghberQOE?usp=sharing)
 
 ## 📖 Sobre o Projeto
 
