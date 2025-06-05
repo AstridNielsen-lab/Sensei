@@ -1,0 +1,117 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build directories
+build/
+dist/
+out/
+build/Release
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.lnk
+
+# Windows specific
+*.exe
+*.dll
+*.pdb
+*.cache
+*.so
+*.dylib
+
+# Logs
+*.log
+logs/
+logs
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.test
+.env.production
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+.node_repl_history
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+bower_components
+typings/
+
+# Cache directories
+.npm
+.eslintcache
+.cache
+.parcel-cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Framework specific
+.next
+.nuxt
+.grunt
+.lock-wscript
+.out
+.storybook-out
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Package files
+*.tgz
+.yarn-integrity
+
+# Large binary files
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.iso
+*.dmg
+
+# Media files (if not needed)
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.mkv
+*.mp3
+*.wav
+*.flac

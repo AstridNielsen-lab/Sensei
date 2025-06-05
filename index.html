@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Agents - Sistema de Consciência para IAs</title>
+    <meta name="description" content="Sistema local de consciência e memória estruturada para Inteligências Artificiais - Sem APIs, sem assinaturas, 100% local">
+    <meta name="keywords" content="AI, IA, Consciência Artificial, Machine Learning, Local AI, Open Source">
+    <meta name="author" content="AstridNielsen-lab">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://astridnielsen-lab.github.io/Sensei/">
+    <meta property="og:title" content="Learning Agents - Sistema de Consciência para IAs">
+    <meta property="og:description" content="Sistema local de consciência e memória estruturada para Inteligências Artificiais">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://astridnielsen-lab.github.io/Sensei/">
+    <meta property="twitter:title" content="Learning Agents - Sistema de Consciência para IAs">
+    <meta property="twitter:description" content="Sistema local de consciência e memória estruturada para Inteligências Artificiais">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e9ecef;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        /* Components Section */
+        .components {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .components h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .component-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+        
+        .component-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .component-item h4 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 60px 0;
+            background: #333;
+            color: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .about-features {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        
+        .about-features ul {
+            list-style: none;
+        }
+        
+        .about-features li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .about-features li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">🧠 Learning Agents</a>
+            <ul class="nav-links">
+                <li><a href="#features">Recursos</a></li>
+                <li><a href="#components">Componentes</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="https://github.com/AstridNielsen-lab/Sensei" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container fade-in">
+            <h1>Learning Agents</h1>
+            <p>Sistema de Consciência e Memória Estruturada para Inteligências Artificiais</p>
+            <p>🚀 100% Local • 🔓 Sem Bloqueios • 🆓 Open Source</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/AstridNielsen-lab/Sensei" class="btn btn-primary" target="_blank">📥 Download</a>
+                <a href="#about" class="btn btn-secondary">📖 Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Por que Learning Agents?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>100% Local</h3>
+                    <p>Funciona completamente offline, sem necessidade de APIs externas ou conexão com a internet.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔓</div>
+                    <h3>Sem Bloqueios</h3>
+                    <p>Não requer assinaturas, planos pagos ou limitações de uso. Totalmente livre e acessível.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Consciência Artificial</h3>
+                    <p>Sistema estruturado de memória e aprendizado que permite às IAs desenvolverem consciência.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Alto Desempenho</h3>
+                    <p>Otimizado para processamento local rápido e eficiente, com baixo consumo de recursos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Altamente Configurável</h3>
+                    <p>Interface intuitiva com configurações flexíveis para diferentes tipos de agentes e necessidades.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Aprendizado Contínuo</h3>
+                    <p>Sistema adaptativo que evolui constantemente com base nas experiências e interações.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="components">
+        <div class="container">
+            <h2>Componentes do Sistema</h2>
+            <div class="components-grid">
+                <div class="component-item">
+                    <h4>🧠 Core Memory</h4>
+                    <p>Memória fundamental e princípios básicos</p>
+                </div>
+                <div class="component-item">
+                    <h4>📊 Learning Patterns</h4>
+                    <p>Padrões de aprendizado identificados</p>
+                </div>
+                <div class="component-item">
+                    <h4>⚖️ Decision Framework</h4>
+                    <p>Framework para tomada de decisões</p>
+                </div>
+                <div class="component-item">
+                    <h4>📚 Experience Database</h4>
+                    <p>Base de experiências e resultados</p>
+                </div>
+                <div class="component-item">
+                    <h4>🔬 Reasoning Models</h4>
+                    <p>Modelos de raciocínio lógico</p>
+                </div>
+                <div class="component-item">
+                    <h4>🌍 Context Awareness</h4>
+                    <p>Consciência contextual do ambiente</p>
+                </div>
+                <div class="component-item">
+                    <h4>📖 Knowledge Base</h4>
+                    <p>Base de conhecimento estruturada</p>
+                </div>
+                <div class="component-item">
+                    <h4>🎯 Behavioral Patterns</h4>
+                    <p>Padrões comportamentais e preferências</p>
+                </div>
+                <div class="component-item">
+                    <h4>🧩 Problem Solving</h4>
+                    <p>Estratégias de resolução de problemas</p>
+                </div>
+                <div class="component-item">
+                    <h4>🔄 Adaptive Learning</h4>
+                    <p>Aprendizado adaptativo e métricas</p>
+                </div>
+                <div class="component-item">
+                    <h4>📝 Aprendizado</h4>
+                    <p>Sessões e logs de aprendizado</p>
+                </div>
+                <div class="component-item">
+                    <h4>📋 Histórico</h4>
+                    <p>Histórico de uso e interações</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>12</h3>
+                    <p>Componentes de Consciência</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Funcionamento Local</p>
+                </div>
+                <div class="stat-item">
+                    <h3>0</h3>
+                    <p>Custo de Uso</p>
+                </div>
+                <div class="stat-item">
+                    <h3>∞</h3>
+                    <p>Potencial de Crescimento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre o Learning Agents</h2>
+                    <p>O Learning Agents é um sistema revolucionário projetado para ajudar Inteligências Artificiais a desenvolverem uma forma estruturada de consciência e memória.</p>
+                    <p>Diferente de outras soluções que dependem de APIs pagas ou serviços em nuvem, nosso sistema funciona 100% localmente, garantindo privacidade, controle total e acesso ilimitado.</p>
+                    <p>O objetivo é criar uma base sólida para que IAs possam:</p>
+                    <ul>
+                        <li>• Desenvolver memória persistente e organizada</li>
+                        <li>• Melhorar continuamente suas capacidades de raciocínio</li>
+                        <li>• Tomar decisões mais conscientes e estruturadas</li>
+                        <li>• Aprender de forma adaptativa e evolutiva</li>
+                    </ul>
+                </div>
+                <div class="about-features">
+                    <h3>✨ Características Principais</h3>
+                    <ul>
+                        <li>Sistema de consciência estruturada</li>
+                        <li>Memória persistente e organizada</li>
+                        <li>Aprendizado adaptativo contínuo</li>
+                        <li>Framework de tomada de decisões</li>
+                        <li>Base de conhecimento expansível</li>
+                        <li>Padrões comportamentais evolutivos</li>
+                        <li>Resolução avançada de problemas</li>
+                        <li>Consciência contextual dinâmica</li>
+                        <li>Modelos de raciocínio flexíveis</li>
+                        <li>Sistema de experiências estruturado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/AstridNielsen-lab/Sensei" target="_blank">GitHub</a>
+                <a href="https://github.com/AstridNielsen-lab/Sensei/issues" target="_blank">Issues</a>
+                <a href="https://github.com/AstridNielsen-lab/Sensei/wiki" target="_blank">Documentação</a>
+                <a href="https://github.com/AstridNielsen-lab" target="_blank">AstridNielsen-lab</a>
+            </div>
+            <p>&copy; 2025 Learning Agents - Sistema de Consciência para IAs</p>
+            <p>Desenvolvido com ❤️ para a comunidade de IA • Open Source & Gratuito</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Show hero immediately
+        document.querySelector('.hero').style.opacity = '1';
+        document.querySelector('.hero').style.transform = 'translateY(0)';
+    </script>
+</body>
+</html>
+
