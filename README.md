@@ -19,6 +19,8 @@ O **Sensei** é um sistema avançado de agentes de aprendizagem focado no desenv
 - **Aprendizagem Contínua**: Capacidade de aprender e se adaptar constantemente ao ambiente
 - **Framework Modular**: Arquitetura flexível e extensível para diferentes tipos de agentes
 
+![image](https://github.com/user-attachments/assets/638ed9c5-d2e9-46ac-85a2-801222fe44db)
+
 ![image](https://github.com/user-attachments/assets/b0ea9020-1090-4886-8df9-1d9651073f0a)
 ![image](https://github.com/user-attachments/assets/3463c6ff-6faf-489e-845d-b359eae1dfcb)
 ![image](https://github.com/user-attachments/assets/80246783-d344-484a-99ff-5028da6dfe9f)
