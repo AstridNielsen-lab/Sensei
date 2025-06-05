@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensei - Splash Screen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+        }
+
+        .splash-container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s infinite;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .developer-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .developer-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ffeb3b;
+        }
+
+        .contact-info {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .contact-info strong {
+            color: #81c784;
+        }
+
+        .company {
+            font-size: 1.1rem;
+            margin: 15px 0;
+            color: #64b5f6;
+            font-weight: bold;
+        }
+
+        .company a {
+            color: #64b5f6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .company a:hover {
+            color: #42a5f5;
+        }
+
+        .contributions {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .contributions h3 {
+            color: #ffeb3b;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .contributions p {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .payment-methods {
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .payment-methods div {
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .payment-methods strong {
+            color: #81c784;
+            min-width: 80px;
+            display: inline-block;
+        }
+
+        .crypto-address {
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .loading {
+            margin-top: 30px;
+        }
+
+        .loading-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #81c784, #64b5f6, #ffeb3b);
+            border-radius: 2px;
+            animation: loading 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .splash-container {
+                padding: 25px;
+                margin: 20px;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .developer-name {
+                font-size: 1.3rem;
+            }
+            
+            .contact-info {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-container">
+        <div class="logo">Sensei</div>
+        <div class="subtitle">Sistema Inteligente de Aprendizado Adaptativo</div>
+        
+        <div class="developer-info">
+            <div class="developer-name">Julio Campos Machado</div>
+            <div class="contact-info">
+                <strong>WhatsApp:</strong> (11) 97060-3441
+            </div>
+            <div class="contact-info">
+                <strong>Email:</strong> juliocamposmachado@gmail.com
+            </div>
+            <div class="company">
+                <strong>Empresa:</strong> <a href="https://likelook.wixsite.com/solutions" target="_blank">Like Look Solutions</a>
+            </div>
+        </div>
+
+        <div class="contributions">
+            <h3>💰 Como Contribuir</h3>
+            <p>Qualquer valor doado ajuda a educar novos desenvolvedores em tecnologia!</p>
+            
+            <div class="payment-methods">
+                <div>
+                    <strong>PIX/PayPal:</strong> radiotatuapefm@gmail.com
+                </div>
+                <div>
+                    <strong>Bitcoin:</strong>
+                    <div class="crypto-address">bc1qmjf00jqttk2kgemxtxh0hv4xp8fqztnn23cuc2</div>
+                </div>
+                <div>
+                    <strong>Ethereum:</strong>
+                    <div class="crypto-address">0x7481B4591e7f0DFAD23b884E78C46F0c207a3E35</div>
+                </div>
+                <div>
+                    <strong>Litecoin:</strong>
+                    <div class="crypto-address">ltc1qxytts52mykr2u83x6ghwllmu7d524ltt702mcc</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading">
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simular carregamento e redirecionar para a página principal após 5 segundos
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 5000);
+
+        // Permitir clique para pular o splash
+        document.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+
+        // Permitir tecla Enter ou Espaço para pular
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
+
